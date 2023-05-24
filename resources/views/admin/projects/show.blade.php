@@ -13,5 +13,6 @@
         <img src="{{ $project->image }}" alt="{{ $project->title }}">
     @endif
     <p>{{ $project->description }}</p>
+    <h5>Tipologia: {{ $project->type ? $project->type->name : 'Nessuna tipologia esistente' }}</h5>
     <a class="btn btn-danger" href="{{ route('admin.projects.index') }}">Torna alla lista</a>
 @endsection

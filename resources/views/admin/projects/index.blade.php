@@ -10,6 +10,7 @@
                 <th scope="col">Link</th>
                 <th scope="col">Immagine</th>
                 <th scope="col">Data</th>
+                <th scope="col">Tipologia</th>
                 <th scope="col">Azioni</th>
             </tr>
         </thead>
@@ -22,6 +23,7 @@
                     <th>{{ $project->link }}</th>
                     <td>{{ $project->image }}</td>
                     <td>{{ $project->project_date }}</td>
+                    <td>{{ $project->type ? $project->type->name : 'Nessuna tipologia' }}</td>
                     <td>
                         <a class="btn btn-primary" href="{{ route('admin.projects.show', $project->slug) }}">Vista</a>
                     </td>

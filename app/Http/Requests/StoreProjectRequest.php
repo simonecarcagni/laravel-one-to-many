@@ -29,6 +29,7 @@ class StoreProjectRequest extends FormRequest
             'link' => 'required|max:255|url',
             'image' => 'required|max:50',
             'project_date' => 'required|date',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
     public function messages()
@@ -46,8 +47,8 @@ class StoreProjectRequest extends FormRequest
             'image.required' => "L'immagine è richiesta.",
             'image.max' => "Puoi inserire massimo 50 caratteri per l'immagine.",
             'project_date.required' => 'La data è richiesta.',
-            'project_date.date  ' => 'Il dato inserito deve essere di tipo DATE.'
-
+            'project_date.date' => 'Il dato inserito deve essere di tipo DATE.',
+            'type_id.exists' => 'Il valore selezionato non è valido'
         ];
     }
 }
